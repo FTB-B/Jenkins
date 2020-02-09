@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Lint HTML') {
       steps {
-        sh 'pwd'
+        sh 'tidy -q index.html'
       }
     }
 
