@@ -7,11 +7,12 @@ pipeline {
       }
     }
 
-    stage('upload to aws') {
-      steps {
-        s3Upload 'jenkinsexercise'
-      }
-    }
+    stage('Upload to AWS') {
+        steps {
+          withAWS(region:’us-west-2’,credentials:'e98be5d2-bceb-4e81-85c6-512c3b204978') {
+            s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:'jenkinsexercise')
+          }
+        }
 
   }
 }
