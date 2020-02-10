@@ -5,6 +5,7 @@ pipeline {
         steps {
           sh echo 'hello'
         }
+      }
       stage('Upload to AWS') {
         steps {
           withAWS(region:'us-west-1',credentials:'e98be5d2-bceb-4e81-85c6-512c3b204978') {
