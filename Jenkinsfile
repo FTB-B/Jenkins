@@ -4,7 +4,12 @@ pipeline {
     stage('Lint HTML') {
       steps {
         sh 'echo \'hello\''
-        sh 'tidy -e index.html'
+      }
+    }
+
+    stage('upload to aws') {
+      steps {
+        s3Upload 'jenkinsexercise'
       }
     }
 
