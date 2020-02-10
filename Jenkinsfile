@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage('Lint HTML') {
         steps {
-          sh echo 'hello'
+          echo 'hello'
         }
       }
       stage('Upload to AWS') {
